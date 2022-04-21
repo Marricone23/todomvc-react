@@ -1,27 +1,30 @@
-import logo from '../../resources/img/logo.png';
+import { Component } from 'react';
 
+import TodoAddItem from '../todo-add-item/todo-add-item';
+
+import logo from '../../resources/img/logo.png';
 
 import './app.css';
 
-function App() {
-  return (
-    <div className="app">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props){
+    super(props);
+
+    
+  }
+
+  render () {
+    return (
+      <div className="app">
+        <header className="header">
+          <img src={logo} alt="logo"/>      
+        </header>
+        <section className="todoapp">
+  
+        </section>
+      </div>
+    );
+  }
 }
 
 export default App;
