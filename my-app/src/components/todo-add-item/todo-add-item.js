@@ -14,7 +14,7 @@ class TodoAddItem extends Component {
 
         return (
             <>
-            
+            <input className="new-todo" placeholder="What needs to be done?" value=""></input>
             </>
         )
     }

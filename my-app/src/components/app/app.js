@@ -17,9 +17,10 @@ class App extends Component {
     return (
       <div className="app">
         <header className="header">
-          <img src={logo} alt="logo"/>      
+          <img className = "logo" src={logo} alt="logo"/>      
         </header>
         <section className="todoapp">
+          <TodoAddItem/>
   
         </section>
       </div>
