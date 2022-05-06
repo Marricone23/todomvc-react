@@ -1,7 +1,7 @@
 import { Component } from 'react';
 
 import TodoAddItem from '../todo-add-item/todo-add-item';
-import AppFilter from '../app-filter/app-filter';
+import AppFooter from '../app-footer/app-footer';
 import AppInfo from '../app-info/app-info';
 import TodoList from '../todo-list/todo-list';
 
@@ -25,6 +25,7 @@ class App extends Component {
         </header>
         <section className="todoapp">
           <TodoAddItem/>
+          <AppFooter/>
   
         </section>
       </div>
