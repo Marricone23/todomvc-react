@@ -27,3 +27,37 @@
 .toggle-all:checked + label:before {
 	color: #737373;
 }
+
+.todo-list li .destroy {
+	display: none;
+	position: absolute;
+	top: 8px;
+	right: 10px;	
+	width: 40px;
+	height: 40px;
+	margin: auto 0;
+	font-size: 30px;
+	color: #cc9a9a;
+	margin-bottom: 11px;
+	transition: color 0.2s ease-out;
+}
+
+.todo-list li .destroy:hover {
+	color: #af5b5e;
+}
+
+.todo-list li .destroy:after {
+	content: '×';
+}
+
+.todo-list li:hover .destroy {
+	display: block;
+}
+
+.todo-list li .edit {
+	display: none;
+}
+
+.todo-list li.editing:last-child {
+	margin-bottom: -1px;
+}
