@@ -4,6 +4,7 @@ import TodoAddItem from '../todo-add-item/todo-add-item';
 import AppFooter from '../app-footer/app-footer';
 import AppInfo from '../app-info/app-info';
 import TodoList from '../todo-list/todo-list';
+import AppFilter from '../app-filter/app-filter';
 
 
 import logo from '../../resources/img/logo.png';
@@ -60,7 +61,6 @@ render(){
          data = {data}
          onDelete={this.deleteItem}/>
         <AppFooter/>
-
       </section>
     </div>
   );

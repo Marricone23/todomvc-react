@@ -40,7 +40,8 @@ class TodoAddItem extends Component {
           }
     }
 
-    render () {            
+    render () {       
+        const {todo} = this.state;
         return (
             <>
             <input type="text"
