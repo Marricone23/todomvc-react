@@ -41,7 +41,7 @@ class TodoAddItem extends Component {
     }
 
     render () {       
-        const {todo} = this.state;
+   
         return (
             <>
             <input type="text"

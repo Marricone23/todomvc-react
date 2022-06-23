@@ -2,9 +2,8 @@ import { Component } from 'react';
 
 import TodoAddItem from '../todo-add-item/todo-add-item';
 import AppFooter from '../app-footer/app-footer';
-import AppInfo from '../app-info/app-info';
 import TodoList from '../todo-list/todo-list';
-import AppFilter from '../app-filter/app-filter';
+
 
 
 import logo from '../../resources/img/logo.png';
@@ -37,6 +36,7 @@ class App extends Component {
     const newItem = {
         todo, 
         toggle: false,
+        completed: false,
         id: this.maxId++
     }
     this.setState(({data}) => {
@@ -49,7 +49,7 @@ class App extends Component {
 
 render(){
   const {data} = this.state;
-
+  const todos = this.state.data.length;
   return (
     <div className="app">
       <header className="header">
@@ -60,7 +60,7 @@ render(){
         <TodoList
          data = {data}
          onDelete={this.deleteItem}/>
-        <AppFooter/>
+        <AppFooter todos = {todos}/>
       </section>
     </div>
   );

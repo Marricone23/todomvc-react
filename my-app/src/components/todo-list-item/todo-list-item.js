@@ -34,8 +34,9 @@ class TodoListItem extends Component {
             
             <li className={classNames}>
                 <div className="view">
-                <label onClick={this.onCompleted} 
-                    >{todo}</label>
+                <label 
+                    onClick={this.onCompleted}>
+                    {todo}</label>
                     <input                     
                      className="toggle-all" 
                      type="checkbox">                        
