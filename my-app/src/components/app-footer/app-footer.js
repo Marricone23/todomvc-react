@@ -1,15 +1,20 @@
-import "./app-footer.css";
-
 import AppFilter from "../app-filter/app-filter";
 import TodoCount from "../todo-count/todo-count";
 
-const AppFooter = ({todos}) => {
+import "./app-footer.css";
+
+const AppFooter = ({todos, completed, filter, onFilterSelect}) => {
 
 return (
-    <footer class="footer" data-reactid=".0.2">
-        <TodoCount todos={todos}/>
-        <AppFilter/>        
-        <button class="clear-completed" data-reactid=".0.2.2">Clear completed</button>
+    <footer className="footer" data-reactid=".0.2">
+        <TodoCount 
+        todos = {todos}
+        completed = {completed}
+        />
+        <AppFilter
+        filter={filter} 
+        onFilterSelect={() => onFilterSelect()}/>        
+        <button className="clear-completed" data-reactid=".0.2.2">Clear completed</button>
     </footer>
 )    
 }

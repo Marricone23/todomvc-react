@@ -4,8 +4,6 @@ import TodoAddItem from '../todo-add-item/todo-add-item';
 import AppFooter from '../app-footer/app-footer';
 import TodoList from '../todo-list/todo-list';
 
-
-
 import logo from '../../resources/img/logo.png';
 
 import './app.css';
@@ -15,10 +13,11 @@ class App extends Component {
     super(props);
      this.state = {
       data: [
-        {todo:'wash the dishes', toggle: false, completed: true, id: 1},
-        {todo:'cut the grass', toggle: true, completed: false, id: 2 },
-        {todo:'smoke a cigarette', toggle: false, completed: false, id: 3},
-      ]
+        {todo:'wash the dishes', toggle: false, completed: true, active: true, id: 1},
+        {todo:'cut the grass', toggle: true, completed: false, active: false, id: 2 },
+        {todo:'smoke a cigarette', toggle: false, completed: false, active: false, id: 3},
+      ],
+      filter: " "
     }
     this.maxId = 4;
   }
@@ -30,7 +29,6 @@ class App extends Component {
         }
     })
 }
- 
 
   addItem = (todo) => {
     const newItem = {
@@ -47,9 +45,38 @@ class App extends Component {
     });
 }
 
+onToggleCompleted = (id) => {
+  this.setState(({data}) => ({
+      data: data.map(item => {
+          if (item.id === id) {
+              return {...item, completed: !item.completed}
+          }
+          return item;
+      })
+  }))
+}
+
+filterTodo = (items, filter) => {
+  switch (filter){
+    case 'active':
+      return items.filter(item => item.active);
+    case 'completed':
+      return items.filter(item => item.conpleted);
+    default:
+      return items    
+  }
+}
+
+onFilterSelect = (filter) => {
+  this.setState({filter});
+}
+
 render(){
-  const {data} = this.state;
+  const {data, filter} = this.state;
   const todos = this.state.data.length;
+  const completed = this.state.data.filter(item => !item.completed).length;
+  const visibleData = this.filterTodo(filter);
+
   return (
     <div className="app">
       <header className="header">
@@ -59,8 +86,15 @@ render(){
         <TodoAddItem onAdd={this.addItem}/>
         <TodoList
          data = {data}
-         onDelete={this.deleteItem}/>
-        <AppFooter todos = {todos}/>
+         onDelete={this.deleteItem}
+         onToggleCompleted={this.onToggleCompleted}
+         />
+        <AppFooter 
+        todos = {todos} 
+        completed = {completed}  
+        filter={filter} 
+        onFilterSelect={this.onFilterSelect}     
+       />
       </section>
     </div>
   );

@@ -1,29 +1,29 @@
-import { Component } from "react";
+//import { Component } from "react";
 
 import "./todo-list-item.css"
 
-class TodoListItem extends Component {
-    constructor(props){
+const TodoListItem = (props) => {
+  /*  constructor(props){
        super(props);
        this.state = {
             completed: false   
        }
 
-    }
+    }*/
     
    
-    onCompleted =()=> {
+  /*  onCompleted =()=> {
         this.setState(({completed}) => ({
             completed: !completed
    
         }))
-    }
+    }*/
 
    
-    render() {
+  //  render() {
         
-    const {todo, onDelete} = this.props;
-    const {completed} = this.state
+    const {todo, onDelete, onToggleCompleted, completed} = props;
+    //const {completed} = this.state
         let classNames = "main";
         if (completed) {
             classNames += ' completed';
@@ -35,7 +35,8 @@ class TodoListItem extends Component {
             <li className={classNames}>
                 <div className="view">
                 <label 
-                    onClick={this.onCompleted}>
+                    //onClick={this.onCompleted}
+                    onClick={onToggleCompleted}>
                     {todo}</label>
                     <input                     
                      className="toggle-all" 
@@ -57,6 +58,6 @@ class TodoListItem extends Component {
 
 
 
-}
+//}
 export default TodoListItem;
 
