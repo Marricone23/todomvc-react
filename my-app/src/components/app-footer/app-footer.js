@@ -14,7 +14,7 @@ return (
         <AppFilter
         filter={filter} 
         onFilterSelect={() => onFilterSelect()}/>        
-        <button className="clear-completed" data-reactid=".0.2.2">Clear completed</button>
+         <button className="clear-completed" data-reactid=".0.2.2">Clear completed</button>
     </footer>
 )    
 }

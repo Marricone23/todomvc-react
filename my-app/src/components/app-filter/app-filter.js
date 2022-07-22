@@ -30,6 +30,7 @@ const AppFilter = (props) => {
           { /* <button type="button" class="btn selected" data-reactid=".0.2.1.0.0">All</button>*/}
            {buttons}
            <span data-reactid=".0.2.1.1"> </span>
+          
        {/*<li data-reactid=".0.2.1.2">
             <button type="button" class="btn " data-reactid=".0.2.1.2.0">Active</button></li>
             <span data-reactid=".0.2.1.3"> </span>
