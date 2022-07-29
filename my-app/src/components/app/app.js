@@ -83,12 +83,15 @@ render(){
         <img className = "logo" src={logo} alt="logo"/>            
       </header>
       <section className="todoapp">
-        <TodoAddItem onAdd={this.addItem}/>
+        <TodoAddItem 
+        onAdd={this.addItem}/>
+
         <TodoList
          data = {data}
          onDelete={this.deleteItem}
          onToggleCompleted={this.onToggleCompleted}
          />
+         
         <AppFooter 
         todos = {todos} 
         completed = {completed}  

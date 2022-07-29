@@ -10,27 +10,23 @@ class TodoAddItem extends Component {
         }   
 
     }
-
-    /*onUpdateItem = (e) => {
-        const term = e.target.value;
-        this.setState({term});
-        this.props.onUpdateItem(term)
-    }*/
+    
 
     onValueChange = (e) => {
         this.setState({
-            [e.target.todo] : e.targte.value
+            [e.target.todo] : e.target.value
         })
     }    
     
     onSubmit = (e) => {
-        e.preventDefault();
+        
         // Можно еще и сообщения добавлять, подсветку, атрибуты minlength и тд.
         if (this.state.todo.length < 3) return;
         this.props.onAdd(this.state.todo);
         this.setState({
             todo: ''
         })
+        e.preventDefault();
     }
     
     onKeyDown = (e) => {
@@ -41,20 +37,23 @@ class TodoAddItem extends Component {
     }
 
     render () {       
-   
+       // const { todo } = this.state;
         return (
-            <>
+            <div>
+            <form
+            onSubmit = {this.onSubmit}>
             <input type="text"
             className="new-todo"
             placeholder="What needs to be done?" 
             name = "todo"
             value = {this.setState.todo}
-            /*onChange = {this.onUpdateItem}*/
             onChange = {this.onValueChange}
-            onSubmit = {this.onSubmit}
             onKeyDown={this.onKeyDown}>
             </input>
-            </>
+            <button type="submit"
+                    className="btn btn-outline-light">Добавить</button>
+           </form>
+            </div>
         )
     }
 

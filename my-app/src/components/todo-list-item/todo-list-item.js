@@ -21,21 +21,20 @@ const TodoListItem = (props) => {
 
    
   //  render() {
-        
+  
     const {todo, onDelete, onToggleCompleted, completed} = props;
     //const {completed} = this.state
         let classNames = "main";
         if (completed) {
             classNames += ' completed';
-        }  
-
+        }        
+     
 
         return(
             
             <li className={classNames}>
                 <div className="view">
                 <label 
-                    //onClick={this.onCompleted}
                     onClick={onToggleCompleted}>
                     {todo}</label>
                     <input                     
@@ -48,7 +47,8 @@ const TodoListItem = (props) => {
                     </button></div>
                     <input 
                     className="edit"
-                    value="todo">                     
+                    name = "todo"
+                    value={todo}>                     
                     </input>
             </li>
            
