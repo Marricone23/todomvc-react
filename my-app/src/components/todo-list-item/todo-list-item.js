@@ -30,9 +30,8 @@ const TodoListItem = (props) => {
         }        
      
 
-        return(
-            
-            <li className={classNames}>
+        return(            
+            <li className = {classNames}>
                 <div className="view">
                 <label 
                     onClick={onToggleCompleted}>
@@ -47,16 +46,12 @@ const TodoListItem = (props) => {
                     </button></div>
                     <input 
                     className="edit"
-                    name = "todo"
-                    value={todo}>                     
+                    name='todo'
+                    value = {todo}>                     
                     </input>
-            </li>
-           
+            </li>           
         )
-
  }
-
-
 
 //}
 export default TodoListItem;

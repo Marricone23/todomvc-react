@@ -90,8 +90,7 @@ render(){
          data = {data}
          onDelete={this.deleteItem}
          onToggleCompleted={this.onToggleCompleted}
-         />
-         
+        />         
         <AppFooter 
         todos = {todos} 
         completed = {completed}  
