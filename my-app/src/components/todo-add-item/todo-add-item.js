@@ -7,8 +7,7 @@ class TodoAddItem extends Component {
         super(props);
         this.state = {
             todo: ''
-        }   
-
+        } 
     }
     
     onValueChange = (e) => {
@@ -18,32 +17,26 @@ class TodoAddItem extends Component {
     }    
     
    onSubmit = (e) => {
-        e.preventDefault();
-        // Можно еще и сообщения добавлять, подсветку, атрибуты minlength и тд.
-    //    if (this.state.todo.length < 4) return;
-    //    this.props.onAdd(this.state.todo);
+      e.preventDefault();           
+      this.props.onAdd(this.state.todo);
       this.setState({
           todo: ''
-      })
-        
+      })        
     }
     
-    onKeyDown = (e) => {  
-            if (e.key === 'Enter') {
-            this.props.onAdd(this.state.todo);          
+    onKeyDown = (e) => {   
+          if (e.key === 'Enter') {
+            this.onSubmit();
+           // this.props.onAdd(this.state.todo);          
             console.log("press")
-          }
-          this.setState({
-            todo: ''
-        })
-        
+          }           
     }
 
     render () {       
         return (
             <div>  
-                <input class="toggle-all" id="toggle-all" type="checkbox" data-reactid=".0.1.0"></input>
-                <label for="toggle-all" data-reactid=".0.1.1"></label>            
+                <input className="toggle-all" id="toggle-all" type="checkbox" data-reactid=".0.1.0"></input>
+                <label htmlFor="toggle-all" data-reactid=".0.1.1"></label>            
             <form
             onSubmit = {this.onSubmit}>              
             <input type="text"
@@ -52,7 +45,8 @@ class TodoAddItem extends Component {
             name = "todo"
             value = {this.setState.todo}
             onChange = {this.onValueChange}
-            onKeyDown={this.onKeyDown}>
+            onKeyDown = {this.onKeyDown}
+            >
             </input>
             {/*<button type="submit"
                     className="btn btn-outline-light">Добавить</button>*/}
@@ -60,8 +54,6 @@ class TodoAddItem extends Component {
            </div>
         )
     }
-
-
 }
 
 export default TodoAddItem;

@@ -61,7 +61,7 @@ filterTodo = (items, filter) => {
     case 'active':
       return items.filter(item => item.active);
     case 'completed':
-      return items.filter(item => item.conpleted);
+      return items.filter(item => item.completed);
     default:
       return items    
   }
@@ -90,7 +90,8 @@ render(){
          data = {data}
          onDelete={this.deleteItem}
          onToggleCompleted={this.onToggleCompleted}
-        />         
+        />       
+
         <AppFooter 
         todos = {todos} 
         completed = {completed}  
@@ -99,7 +100,7 @@ render(){
        />
       </section>
     </div>
-  );
+  )
 } 
   
 }

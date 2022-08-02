@@ -25,6 +25,7 @@ const TodoListItem = (props) => {
     const {todo, onDelete, onToggleCompleted, completed} = props;
     //const {completed} = this.state
         let classNames = "main";
+
         if (completed) {
             classNames += ' completed';
         }        
@@ -38,7 +39,8 @@ const TodoListItem = (props) => {
                     {todo}</label>
                     <input                     
                      className="toggle-all" 
-                     type="checkbox">                        
+                     type="checkbox"
+                     defaultValue="check">                        
                      </input>
                     <button 
                     className="destroy"
@@ -47,7 +49,7 @@ const TodoListItem = (props) => {
                     <input 
                     className="edit"
                     name='todo'
-                    value = {todo}>                     
+                    defaultValue = {todo}>                     
                     </input>
             </li>           
         )
