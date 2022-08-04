@@ -6,7 +6,8 @@ class TodoAddItem extends Component {
     constructor (props){
         super(props);
         this.state = {
-            todo: ''
+            todo: '',
+            isChecked: true
         } 
     }
     
@@ -16,26 +17,38 @@ class TodoAddItem extends Component {
         })
     }    
     
-   onSubmit = (e) => {
+    onSubmit = (e) => {
       e.preventDefault();           
       this.props.onAdd(this.state.todo);
       this.setState({
-          todo: ''
+          todo: " "
       })        
     }
+
+    handleInputChange = (event) => {     
+        this.setState({        
+         isChecked: !this.state.isChecked
+        });
+      }
     
     onKeyDown = (e) => {   
           if (e.key === 'Enter') {
             this.onSubmit();
-           // this.props.onAdd(this.state.todo);          
+            ///this.props.onAdd(this.state.todo);          
             console.log("press")
-          }           
+          }          
     }
 
     render () {       
         return (
             <div>  
-                <input className="toggle-all" id="toggle-all" type="checkbox" data-reactid=".0.1.0"></input>
+                <input className="toggle-all"
+                 id="toggle-all"
+                  type="checkbox"
+                  data-reactid=".0.1.0"
+                  defaultChecked = {this.state.isChecked}
+                  onChange = {this.handleInputChange}>   
+                   </input>
                 <label htmlFor="toggle-all" data-reactid=".0.1.1"></label>            
             <form
             onSubmit = {this.onSubmit}>              

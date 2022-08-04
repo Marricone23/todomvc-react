@@ -1,7 +1,3 @@
-.toggle-all:checked + label:before {
-	color: #737373;
-}
-
 .todo-list li .destroy {
 	display: none;
 	position: absolute;

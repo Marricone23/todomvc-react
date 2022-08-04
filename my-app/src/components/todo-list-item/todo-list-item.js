@@ -1,29 +1,26 @@
-//import { Component } from "react";
+import { Component } from "react";
 
 import "./todo-list-item.css"
 
-const TodoListItem = (props) => {
-  /*  constructor(props){
+class TodoListItem extends Component {
+    constructor(props){
        super(props);
        this.state = {
-            completed: false   
+           isChecked: true
        }
 
-    }*/
-    
-   
-  /*  onCompleted =()=> {
-        this.setState(({completed}) => ({
-            completed: !completed
-   
-        }))
-    }*/
+    }
 
+    handleInputChange = (event) => {     
+        this.setState({        
+         isChecked: !this.state.isChecked
+        });
+      }
    
-  //  render() {
+    render() {
   
-    const {todo, onDelete, onToggleCompleted, completed} = props;
-    //const {completed} = this.state
+    const {todo, onDelete, onToggleCompleted, completed} = this.props;
+   
         let classNames = "main";
 
         if (completed) {
@@ -38,9 +35,12 @@ const TodoListItem = (props) => {
                     onClick={onToggleCompleted}>
                     {todo}</label>
                     <input                     
-                     className="toggle-all" 
+                     className="toggle" 
+                     name = "isChecked"
                      type="checkbox"
-                     defaultValue="check">                        
+                     defaultValue="check"
+                     defaultChecked = {this.state.isChecked}
+                     onChange = {this.handleInputChange}>                        
                      </input>
                     <button 
                     className="destroy"
@@ -55,6 +55,6 @@ const TodoListItem = (props) => {
         )
  }
 
-//}
+}
 export default TodoListItem;
 

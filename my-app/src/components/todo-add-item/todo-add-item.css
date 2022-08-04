@@ -1,5 +1,4 @@
 
-
 .toggle-all {
 	text-align: center;
 	border: none; /* Mobile Safari */
@@ -25,6 +24,11 @@
 	color: #e6e6e6;
 	padding: 10px 27px 10px 27px;
 }
+
+.toggle-all:checked + label:before {
+	color: #737373;
+}
+
 .todoapp input::-webkit-input-placeholder {
 	font-style: italic;
 	font-weight: 300;
