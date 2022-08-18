@@ -84,7 +84,8 @@ render(){
       </header>
       <section className="todoapp">
         <TodoAddItem 
-        onAdd={this.addItem}/>
+        onAdd={this.addItem}
+        onToggleCompleted={this.onToggleCompleted}/>
 
         <TodoList
          data = {data}

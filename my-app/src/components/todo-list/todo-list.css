@@ -13,6 +13,7 @@
 
 .todo-list li:last-child {
 	border-bottom: none;
+	
 }
 
 .todo-list li.editing {
@@ -29,11 +30,12 @@
 
 .todo-list li.editing .view {
 	display: none;
+
 }
 
 .todo-list li .toggle {
 	text-align: center;
-	width: 40px;
+	width: 40px;	
 	/* auto, since non-WebKit browsers doesn't support input styling */
 	height: auto;
 	position: absolute;
@@ -47,16 +49,18 @@
 
 .todo-list li .toggle {
 	opacity: 0;
+	
 }
 
 .todo-list li .toggle + label {
-	background-image: url(https://img.icons8.com/sf-ultralight/25/40C057/ok.png);
+	background-image: url('https://img.icons8.com/offices/30/000000/ok.png');
 	background-repeat: no-repeat;
 	background-position: center left;
 }
 
 .todo-list li .toggle:checked + label {
-	background-image: url(https://img.icons8.com/sf-ultralight/25/40C057/ok.png);
+	visibility: visible;
+	background-image: url('https://img.icons8.com/offices/30/000000/ok.png');
 }
 
 .todo-list li label {
@@ -70,5 +74,9 @@
 .todo-list li.completed label {
 	color: #d9d9d9;
 	text-decoration: line-through;
+	background-image: url('https://img.icons8.com/offices/30/000000/ok.png');
+	background-repeat: no-repeat;
+	background-position: center left;
+	margin-left: 10px;
 }
 

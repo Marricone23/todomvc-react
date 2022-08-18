@@ -11,7 +11,7 @@ class TodoListItem extends Component {
 
     }
 
-    handleInputChange = (event) => {     
+    handleInputChange = () => {     
         this.setState({        
          isChecked: !this.state.isChecked
         });
@@ -22,23 +22,26 @@ class TodoListItem extends Component {
     const {todo, onDelete, onToggleCompleted, completed} = this.props;
    
         let classNames = "main";
+       
 
         if (completed) {
             classNames += ' completed';
+            
         }        
      
 
         return(            
             <li className = {classNames}>
-                <div className="view">
+                <div className="view" >
                 <label 
                     onClick={onToggleCompleted}>
-                    {todo}</label>
+                    {todo}
+                    </label>
                     <input                     
-                     className="toggle" 
+                     className="toggle"
                      name = "isChecked"
                      type="checkbox"
-                     defaultValue="check"
+                     defaultValue="todo"
                      defaultChecked = {this.state.isChecked}
                      onChange = {this.handleInputChange}>                        
                      </input>

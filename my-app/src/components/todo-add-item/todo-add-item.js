@@ -40,14 +40,16 @@ class TodoAddItem extends Component {
     }
 
     render () {       
-        return (
+              
+       return (
             <div>  
-                <input className="toggle-all"
-                 id="toggle-all"
+                <input className = "toggle-all"
+                  id="toggle-all"
                   type="checkbox"
                   data-reactid=".0.1.0"
                   defaultChecked = {this.state.isChecked}
-                  onChange = {this.handleInputChange}>   
+                  onChange = {this.handleInputChange}       
+                  >   
                    </input>
                 <label htmlFor="toggle-all" data-reactid=".0.1.1"></label>            
             <form

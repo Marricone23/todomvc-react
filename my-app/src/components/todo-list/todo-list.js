@@ -2,7 +2,7 @@ import TodoListItem from "../todo-list-item/todo-list-item";
 
 import "./todo-list.css";
 
-const TodoList = ({data, onDelete, onToggleCompleted, handleInputChange }) => {
+const TodoList = ({data, onDelete, onToggleCompleted, handleInputChange, isChecked }) => {
    
     const elements = data.map(item => {
         const {id, ...itemProps} = item;
@@ -10,7 +10,7 @@ const TodoList = ({data, onDelete, onToggleCompleted, handleInputChange }) => {
             <TodoListItem {...itemProps} 
             key = {id}    
             type = 'checkbox' 
-            onChange = {() => handleInputChange(id) }       
+            onChange = {() => handleInputChange(id)}                
             onDelete={() => onDelete(id)}
             onToggleCompleted={() => onToggleCompleted(id)}
             />
