@@ -33,8 +33,7 @@ class TodoListItem extends Component {
         return(            
             <li className = {classNames}>
                 <div className="view" >
-                <label 
-                    onClick={onToggleCompleted}>
+                <label>
                     {todo}
                     </label>
                     <input                     
@@ -43,17 +42,18 @@ class TodoListItem extends Component {
                      type="checkbox"
                      defaultValue="todo"
                      defaultChecked = {this.state.isChecked}
-                     onChange = {this.handleInputChange}>                        
+                     onChange = {this.handleInputChange}
+                     onClick={onToggleCompleted} >                                        
                      </input>
                     <button 
                     className="destroy"
                     onClick={onDelete}>
                     </button></div>
                     <input 
-                    className="edit"
-                    name='todo'
-                    defaultValue = {todo}>                     
-                    </input>
+                    className = "edit"
+                    type = "text"                 
+                    defaultValue = {todo}/>                     
+                    
             </li>           
         )
  }

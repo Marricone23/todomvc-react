@@ -13,7 +13,7 @@ class TodoAddItem extends Component {
     
     onValueChange = (e) => {
         this.setState({
-            [e.target.todo] : e.target.value
+            [e.target.name] : e.target.value
         })
     }    
     
@@ -21,11 +21,11 @@ class TodoAddItem extends Component {
       e.preventDefault();           
       this.props.onAdd(this.state.todo);
       this.setState({
-          todo: " "
+          todo: ''
       })        
     }
 
-    handleInputChange = (event) => {     
+    handleInputChange = () => {     
         this.setState({        
          isChecked: !this.state.isChecked
         });
@@ -33,14 +33,13 @@ class TodoAddItem extends Component {
     
     onKeyDown = (e) => {   
           if (e.key === 'Enter') {
-            this.onSubmit();
-            ///this.props.onAdd(this.state.todo);          
+            this.onSubmit();            
             console.log("press")
           }          
     }
 
-    render () {       
-              
+    render () {      
+       const { todo } = this.state;        
        return (
             <div>  
                 <input className = "toggle-all"
@@ -48,21 +47,20 @@ class TodoAddItem extends Component {
                   type="checkbox"
                   data-reactid=".0.1.0"
                   defaultChecked = {this.state.isChecked}
-                  onChange = {this.handleInputChange}       
-                  >   
-                   </input>
+                  onChange = {this.handleInputChange}                            
+                  />                
                 <label htmlFor="toggle-all" data-reactid=".0.1.1"></label>            
             <form
             onSubmit = {this.onSubmit}>              
-            <input type="text"
+            <input 
+            type="text"
             className="new-todo"
             placeholder="What needs to be done?" 
             name = "todo"
-            value = {this.setState.todo}
+            value = {todo}
             onChange = {this.onValueChange}
             onKeyDown = {this.onKeyDown}
-            >
-            </input>
+            />          
             {/*<button type="submit"
                     className="btn btn-outline-light">Добавить</button>*/}
            </form>

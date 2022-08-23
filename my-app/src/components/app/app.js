@@ -17,7 +17,8 @@ class App extends Component {
         {todo:'cut the grass', toggle: true, completed: false, active: false, id: 2 },
         {todo:'smoke a cigarette', toggle: false, completed: false, active: false, id: 3},
       ],
-      filter: " "
+      term: " ",
+      filter: "all"
     }
     this.maxId = 4;
   }

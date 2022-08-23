@@ -7,8 +7,9 @@ const TodoList = ({data, onDelete, onToggleCompleted, handleInputChange, isCheck
     const elements = data.map(item => {
         const {id, ...itemProps} = item;
         return (
-            <TodoListItem {...itemProps} 
-            key = {id}    
+            <TodoListItem 
+            key = {id} 
+            {...itemProps}    
             type = 'checkbox' 
             onChange = {() => handleInputChange(id)}                
             onDelete={() => onDelete(id)}
@@ -17,7 +18,7 @@ const TodoList = ({data, onDelete, onToggleCompleted, handleInputChange, isCheck
         )
     })
 
-    return (
+    return (          
         <ul className="todo-list">
            {elements}
         </ul>
