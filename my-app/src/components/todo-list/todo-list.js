@@ -2,7 +2,7 @@ import TodoListItem from "../todo-list-item/todo-list-item";
 
 import "./todo-list.css";
 
-const TodoList = ({data, onDelete, onToggleCompleted, handleInputChange, isChecked }) => {
+const TodoList = ({data, onDelete, onToggleCompleted, handleInputChange  }) => {
    
     const elements = data.map(item => {
         const {id, ...itemProps} = item;

@@ -72,11 +72,14 @@
 }
 
 .todo-list li.completed label {
-	color: #d9d9d9;
-	text-decoration: line-through;
 	background-image: url('https://img.icons8.com/offices/30/000000/ok.png');
 	background-repeat: no-repeat;
 	background-position: center left;
 	margin-left: 10px;
 }
 
+
+.todo-list li.completed input{
+	color: #d9d9d9;
+	text-decoration: line-through;	
+}

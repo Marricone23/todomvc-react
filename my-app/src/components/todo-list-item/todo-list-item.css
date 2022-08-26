@@ -1,7 +1,7 @@
 .todo-list li .destroy {
 	display: none;
 	position: absolute;
-	top: 8px;
+	top: 15px;
 	right: 10px;	
 	width: 40px;
 	height: 40px;
@@ -24,10 +24,24 @@
 	display: block;
 }
 
-.todo-list li .edit {
+
+.todo-list li .edit input {
+	border: none;
 	display: none;
+	
 }
 
-.todo-list li.editing:last-child {
+
+/*.todo-list li .edit {
+	display: none;
+	
+}
+
+.todo-list li .editing:last-child {
 	margin-bottom: -1px;
 }
+
+.todo-list li.editing {
+    border-bottom: none;
+    padding: 0;
+}*/

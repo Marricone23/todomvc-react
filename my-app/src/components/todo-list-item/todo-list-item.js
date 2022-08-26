@@ -17,9 +17,10 @@ class TodoListItem extends Component {
         });
       }
    
+    
     render() {
   
-    const {todo, onDelete, onToggleCompleted, completed} = this.props;
+    const {todo, onDelete, onToggleCompleted, completed } = this.props;
    
         let classNames = "main";
        
@@ -34,25 +35,31 @@ class TodoListItem extends Component {
             <li className = {classNames}>
                 <div className="view" >
                 <label>
-                    {todo}
+                <input  type = "text"  
+                       className = "edit"                                                  
+                       defaultValue = {todo}
+                       name = "todo"/> 
+                    
                     </label>
-                    <input                     
-                     className="toggle"
-                     name = "isChecked"
-                     type="checkbox"
-                     defaultValue="todo"
-                     defaultChecked = {this.state.isChecked}
-                     onChange = {this.handleInputChange}
-                     onClick={onToggleCompleted} >                                        
-                     </input>
+                      <input                     
+                       className="toggle"
+                       name = "isChecked"
+                       type="checkbox"
+                       defaultValue="todo"
+                       defaultChecked = {this.state.isChecked}
+                       onChange = {this.handleInputChange}
+                       onClick = {onToggleCompleted} >                                        
+                      </input>
+
+                     
+                       
+
                     <button 
-                    className="destroy"
-                    onClick={onDelete}>
-                    </button></div>
-                    <input 
-                    className = "edit"
-                    type = "text"                 
-                    defaultValue = {todo}/>                     
+                    className = "destroy"
+                    onClick = {onDelete}>
+                    </button>
+
+                </div>                                     
                     
             </li>           
         )

@@ -11,6 +11,8 @@ const AppFilter = (props) => {
     const buttons = buttonsData.map(({name, lable}) => {
         const active = props.filter === name;
         const clazz = active ? 'selected' : 'btn';
+       
+
         return (
             <li data-reactid=".0.2.1.0">
             <button 

@@ -15,7 +15,7 @@ class TodoAddItem extends Component {
         this.setState({
             [e.target.name] : e.target.value
         })
-    }    
+    }   
     
     onSubmit = (e) => {
       e.preventDefault();           
@@ -59,7 +59,7 @@ class TodoAddItem extends Component {
             name = "todo"
             value = {todo}
             onChange = {this.onValueChange}
-            onKeyDown = {this.onKeyDown}
+            onKeyDown = {this.onKeyDown}           
             />          
             {/*<button type="submit"
                     className="btn btn-outline-light">Добавить</button>*/}
