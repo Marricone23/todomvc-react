@@ -1,12 +1,15 @@
 
 .filters {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	position: absolute;
-	right: 0;
-	left: 0;
+	color: #777;
+	margin-top: -35px;
+    padding: 0px;
+    list-style: none;
+    position: relative;
+    justify-content: center;
+    display: flex;
 }
+
+
 
 .filters li {
 	display: inline;
