@@ -20,7 +20,7 @@ class TodoListItem extends Component {
     
     render() {
   
-    const {todo, onDelete, onToggleCompleted, completed, active, onToggleProp } = this.props;
+    const {todo, onDelete, onToggleCompleted, completed } = this.props;
    
         let classNames = "main";
        
@@ -31,12 +31,7 @@ class TodoListItem extends Component {
         } else {
             classNames += ' active';  
         }
-     
-        
-       /* if (active) {
-           classNames += ' active'; 
-        }  */     
-     
+          
 
         return(            
             <li className = {classNames}>
@@ -55,9 +50,7 @@ class TodoListItem extends Component {
                        defaultValue="todo"
                        defaultChecked = {this.state.isChecked}
                        onChange = {this.handleInputChange}
-                       onClick = {onToggleCompleted} 
-                      /* onClick={onToggleProp} 
-                       data-toggle = "completed"*/                                        
+                       onClick = {onToggleCompleted}                                                          
                        >                                        
                       </input>
 

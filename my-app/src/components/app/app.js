@@ -67,20 +67,6 @@ onToggleCompleted = (id, prop) => {
   }))
 }
 
-/*onToggleProp = (id, prop) =>{
-  this.setState(({data}) => ({ 
-    data: data.map(item=>{
-      if(item.id === id){
-        return{...item, [prop]: !item[prop]}
-
-      }
-      return item;
-    })
-  }))
-}*/
-
-
-
 filterTodo = (items, filter) => {
   switch (filter){
     case 'active':
@@ -116,8 +102,7 @@ render(){
         <TodoList
          data = {visibleData }
          onDelete={this.deleteItem}
-         onToggleCompleted={this.onToggleCompleted}
-         /*onToggleProp={this.onToggleProp}*/
+         onToggleCompleted={this.onToggleCompleted}        
         />       
 
         <AppFooter 

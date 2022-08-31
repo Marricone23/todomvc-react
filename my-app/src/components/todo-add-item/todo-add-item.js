@@ -61,9 +61,7 @@ class TodoAddItem extends Component {
             onChange = {this.onValueChange}
             onKeyDown = {this.onKeyDown}           
             />          
-            {/*<button type="submit"
-                    className="btn btn-outline-light">Добавить</button>*/}
-           </form>
+            </form>
            </div>
         )
     }

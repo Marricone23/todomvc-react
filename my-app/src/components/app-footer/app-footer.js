@@ -1,12 +1,29 @@
 
 
+import { Component } from "react";
 import TodoCount from "../todo-count/todo-count";
 
 import "./app-footer.css";
 
 
-const AppFooter = ({todos, completed, onDelete}) => {
+//const AppFooter = ({todos, completed, onDelete}) => {
 
+class AppFooter extends Component {
+ constructor(props){
+    super(props);
+
+ }
+
+ render () {
+
+    let ClassNamess =  "clear-completed" 
+
+    const {todos, completed, onDelete} = this.props;
+
+    if (completed >= todos ) {
+        ClassNamess += " clear-active"
+
+    }
 
     return (
 
@@ -16,15 +33,18 @@ const AppFooter = ({todos, completed, onDelete}) => {
             completed = {completed}
             />
                
-             <button className="clear-completed" 
+             <button 
+             className = {ClassNamess}
              data-reactid=".0.2.2"
              onClick={onDelete}>
              Clear completed</button>
         </footer>
     ) 
+//}
+
 }
 
-
+    }
 
 
   
