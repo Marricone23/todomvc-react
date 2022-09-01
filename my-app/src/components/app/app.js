@@ -15,9 +15,9 @@ class App extends Component {
     super(props);
      this.state = {
       data: [
-        {todo:'wash the dishes', completed: false, active: true, id: 1},
-        {todo:'cut the grass', completed: false, active: true, id: 2 },
-        {todo:'smoke a cigarette', completed: false, active: true, id: 3},
+       // {todo:'wash the dishes', completed: false, active: true, id: 1},
+       // {todo:'cut the grass', completed: false, active: true, id: 2 },
+       // {todo:'smoke a cigarette', completed: false, active: true, id: 3},
       ],
       term: " ",
       filter: " "
@@ -56,7 +56,7 @@ deleteAllItems = () => {
     });
 }
 
-onToggleCompleted = (id, prop) => {
+onToggleCompleted = (id) => {
   this.setState(({data}) => ({
       data: data.map(item => {
           if (item.id === id) {
