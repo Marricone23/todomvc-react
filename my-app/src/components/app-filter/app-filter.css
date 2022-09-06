@@ -1,14 +1,17 @@
 
 .filters {
 	color: #777;
-	margin-top: -35px;
+	margin-top: -5px;
     padding: 0px;
     list-style: none;
     position: relative;
     justify-content: center;
-    display: flex;
+    display: none;
 }
 
+.filters-active {
+	display: flex;
+}
 
 
 .filters li {

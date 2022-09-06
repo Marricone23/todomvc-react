@@ -1,4 +1,5 @@
 import {Component} from 'react';
+import TodoList from '../todo-list/todo-list';
 
 import "./todo-add-item.css"
 
@@ -34,7 +35,7 @@ class TodoAddItem extends Component {
     onKeyDown = (e) => {   
           if (e.key === 'Enter') {
             this.onSubmit();            
-            console.log("press")
+            console.log("press")            
           }          
     }
 

@@ -3,7 +3,6 @@ import { Component } from 'react';
 import TodoAddItem from '../todo-add-item/todo-add-item';
 import AppFooter from '../app-footer/app-footer';
 import TodoList from '../todo-list/todo-list';
-import AppFilter from '../app-filter/app-filter';
 
 import logo from '../../resources/img/logo.png';
 
@@ -100,21 +99,18 @@ render(){
         onToggleCompleted={this.onToggleCompleted}/>
 
         <TodoList
-         data = {visibleData }
+         data = {visibleData}
          onDelete={this.deleteItem}
          onToggleCompleted={this.onToggleCompleted}        
-        />       
+        />     
 
         <AppFooter 
         todos = {todos} 
         completed = {completed}  
-        onDelete = {this.deleteAllItems}       
-           /> 
-
-      <AppFilter
-      filter={filter}
-      onFilterSelect={this.onFilterSelect}/>    
-       
+        onDelete = {this.deleteAllItems} 
+        filter={filter}
+        onFilterSelect={this.onFilterSelect}   
+        />       
       </section>
     </div>
   )

@@ -1,6 +1,6 @@
 import "./app-filter.css";
 
-const AppFilter = (props) => {
+const AppFilter = (props, todos) => {
    
     const buttonsData = [
          {name: 'all', lable: "All"},
@@ -11,9 +11,8 @@ const AppFilter = (props) => {
     const buttons = buttonsData.map(({name, lable}) => {
         const active = props.filter === name;
         const clazz = active ? 'selected' : 'btn';
-       
-
-        return (
+    
+           return (
             <li data-reactid=".0.2.1.0">
             <button 
             type="button" 
@@ -25,20 +24,21 @@ const AppFilter = (props) => {
             </li> 
         )
     })
+    
+  
+    let classfilter = "filters"
+   // let classfilterr = " filters-active"
+    if (todos) {
+       classfilter += " filters-active"}
+   
 
     return (
-    <ul className="filters" data-reactid=".0.2.1">
-        
-          { /* <button type="button" class="btn selected" data-reactid=".0.2.1.0.0">All</button>*/}
+           <ul 
+           className = {classfilter}   
+           data-reactid=".0.2.1">              
            {buttons}
-           <span data-reactid=".0.2.1.1"> </span>
-          
-       {/*<li data-reactid=".0.2.1.2">
-            <button type="button" class="btn " data-reactid=".0.2.1.2.0">Active</button></li>
-            <span data-reactid=".0.2.1.3"> </span>
-        <li data-reactid=".0.2.1.4">
-    <button type="button" class="btn " data-reactid=".0.2.1.4.0">Completed</button></li>*/}
-    </ul>
+           <span data-reactid=".0.2.1.1"> </span>     
+           </ul>
     )
 
 };

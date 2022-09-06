@@ -13,7 +13,7 @@ const TodoList = ({data, onDelete, onToggleCompleted, handleInputChange, onToggl
             type = 'checkbox' 
             onChange = {() => handleInputChange(id)}                
             onDelete={() => onDelete(id)}
-           onToggleCompleted={() => onToggleCompleted(id)}
+            onToggleCompleted={() => onToggleCompleted(id)}
             />
         )
     })
