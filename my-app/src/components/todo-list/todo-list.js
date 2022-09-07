@@ -2,7 +2,7 @@ import TodoListItem from "../todo-list-item/todo-list-item";
 
 import "./todo-list.css";
 
-const TodoList = ({data, onDelete, onToggleCompleted, handleInputChange, onToggleProp, active, completed }) => {
+const TodoList = ({data, onDelete, onToggleCompleted, handleInputChange, onToggleAll, active, completed }) => {
    
     const elements = data.map(item => {
         const {id, ...itemProps} = item;
@@ -14,7 +14,7 @@ const TodoList = ({data, onDelete, onToggleCompleted, handleInputChange, onToggl
             onChange = {() => handleInputChange(id)}                
             onDelete={() => onDelete(id)}
             onToggleCompleted={() => onToggleCompleted(id)}
-            />
+            onToggleAll={() => onToggleCompleted(id)} />
         )
     })
 

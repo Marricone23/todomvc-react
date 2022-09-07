@@ -1,5 +1,4 @@
 import {Component} from 'react';
-import TodoList from '../todo-list/todo-list';
 
 import "./todo-add-item.css"
 
@@ -31,6 +30,8 @@ class TodoAddItem extends Component {
          isChecked: !this.state.isChecked
         });
       }
+
+      
     
     onKeyDown = (e) => {   
           if (e.key === 'Enter') {
@@ -39,7 +40,9 @@ class TodoAddItem extends Component {
           }          
     }
 
-    render () {      
+
+    render () {   
+      const { onToggleAll } = this.props;
        const { todo } = this.state;        
        return (
             <div>  
@@ -48,7 +51,8 @@ class TodoAddItem extends Component {
                   type="checkbox"
                   data-reactid=".0.1.0"
                   defaultChecked = {this.state.isChecked}
-                  onChange = {this.handleInputChange}                            
+                  onChange = {this.handleInputChange}
+                  onClick = {onToggleAll}                            
                   />                
                 <label htmlFor="toggle-all" data-reactid=".0.1.1"></label>            
             <form

@@ -27,7 +27,7 @@ const AppFilter = (props, todos) => {
     
   
     let classfilter = "filters"
-   // let classfilterr = " filters-active"
+   
     if (todos) {
        classfilter += " filters-active"}
    

@@ -52,9 +52,7 @@ class TodoListItem extends Component {
                        onChange = {this.handleInputChange}
                        onClick = {onToggleCompleted}                                                          
                        >                                        
-                      </input>
-
-                     
+                      </input>                  
                        
 
                     <button 

@@ -66,6 +66,7 @@ onToggleCompleted = (id) => {
   }))
 }
 
+
 filterTodo = (items, filter) => {
   switch (filter){
     case 'active':
@@ -81,6 +82,14 @@ onFilterSelect = (filter) => {
   this.setState({filter});
 }
 
+onToggleAll = () => {
+  this.setState(({data}) => ({
+    data: data.map(item => {
+       return {...item, completed: !item.completed}   
+  
+    })
+}))
+}
 
 render(){
   const {data, filter} = this.state;
@@ -95,8 +104,10 @@ render(){
       </header>
       <section className="todoapp">
         <TodoAddItem 
-        onAdd={this.addItem}
-        onToggleCompleted={this.onToggleCompleted}/>
+        onAdd = {this.addItem}
+        onToggleCompleted = {this.onToggleCompleted}
+        onToggleAll = {this.onToggleAll}
+        />
 
         <TodoList
          data = {visibleData}
