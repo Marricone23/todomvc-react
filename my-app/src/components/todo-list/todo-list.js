@@ -14,7 +14,7 @@ const TodoList = ({data, onDelete, onToggleCompleted, handleInputChange, onToggl
             onChange = {() => handleInputChange(id)}                
             onDelete={() => onDelete(id)}
             onToggleCompleted={() => onToggleCompleted(id)}
-            onToggleAll={() => onToggleCompleted(id)} />
+            />
         )
     })
 

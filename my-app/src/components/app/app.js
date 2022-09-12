@@ -19,9 +19,10 @@ class App extends Component {
        // {todo:'smoke a cigarette', completed: false, active: true, id: 3},
       ],
       term: " ",
-      filter: " "
+      filter: " ",
+      isChecked: false
     }
-    this.maxId = 4;
+    this.maxId = 1;
   }
 
   deleteItem = (id) => {
@@ -59,7 +60,8 @@ onToggleCompleted = (id) => {
   this.setState(({data}) => ({
       data: data.map(item => {
           if (item.id === id) {
-              return {...item, completed: !item.completed, active: !item.active }             
+              return {...item, completed: !item.completed, active: !item.active }     
+                      
           }
           return item;
       })
@@ -85,8 +87,10 @@ onFilterSelect = (filter) => {
 onToggleAll = () => {
   this.setState(({data}) => ({
     data: data.map(item => {
-       return {...item, completed: !item.completed}   
   
+        return {...item, completed: !item.completed || !item.active, active: item.completed && item.active }         
+      /*return {...item, completed: !item.completed}  */
+        
     })
 }))
 }
@@ -106,7 +110,7 @@ render(){
         <TodoAddItem 
         onAdd = {this.addItem}
         onToggleCompleted = {this.onToggleCompleted}
-        onToggleAll = {this.onToggleAll}
+        onToggleAll = {this.onToggleAll}   
         />
 
         <TodoList

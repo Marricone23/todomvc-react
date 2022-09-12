@@ -31,7 +31,6 @@ class TodoListItem extends Component {
         } else {
             classNames += ' active';  
         }
-          
 
         return(            
             <li className = {classNames}>
