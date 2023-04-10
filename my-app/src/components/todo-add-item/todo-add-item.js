@@ -52,7 +52,7 @@ class TodoAddItem extends Component {
                   data-reactid=".0.1.0"
                   defaultChecked = {this.state.isChecked}
                   onChange = {this.handleInputChange}
-                  onClick = {onToggleAll}                            
+                  onClick = {onToggleAll}
                   />                
                 <label htmlFor="toggle-all" data-reactid=".0.1.1"></label>            
             <form

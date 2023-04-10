@@ -88,9 +88,8 @@ onToggleAll = () => {
   this.setState(({data}) => ({
     data: data.map(item => {
   
-        return {...item, completed: !item.completed || !item.active, active: item.completed && item.active }         
-      /*return {...item, completed: !item.completed}  */
-        
+      return {...item, completed: !item.completed || item.completed, active: item.completed && item.active }     
+      /*return {...item, completed: item.completed && !item.completed  ? item.completed : !item.completed } */
     })
 }))
 }
@@ -111,6 +110,7 @@ render(){
         onAdd = {this.addItem}
         onToggleCompleted = {this.onToggleCompleted}
         onToggleAll = {this.onToggleAll}   
+        unToggleAll = {this.unToggleAll}
         />
 
         <TodoList
